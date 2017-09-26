@@ -1,0 +1,12 @@
+#misc
+/.sass-cache
+npm-debug.log
+.DS_Store
+.gulp/
+
+#dependences
+/node_modules
+src/lib/
+
+#build
+/public

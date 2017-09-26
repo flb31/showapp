@@ -1,0 +1,38 @@
+{
+  "name": "flb31-frontend",
+  "version": "1.0.0",
+  "description": "Proyecto base",
+  "repository": "",
+  "scripts": {
+    "prestart": "npm install",
+    "postinstall": "bower install && gulp build"
+  },
+  "author": "Fabian Luna",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-connect": "^5.0.0",
+    "gulp-express": "^0.3.5",
+    "gulp-jshint": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "jshint": "^2.9.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-preset-latest": "^6.16.0",
+    "bower": "^1.7.9",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-if": "^2.0.1",
+    "gulp-pug": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "run-sequence": "^1.2.2",
+    "yargs": "^4.7.1"
+  },
+  "engines": {
+    "node": "6.4.0",
+    "npm": "3.10.7"
+  }
+}
