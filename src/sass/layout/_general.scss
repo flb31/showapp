@@ -9,4 +9,18 @@ body {
   *:after {
     box-sizing: border-box;
   }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  header,
+  nav,
+  section {
+    >.wrapper {
+      max-width: $wrapper;
+      margin: 0 auto;
+    }
+  }
+  
 }

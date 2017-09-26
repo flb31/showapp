@@ -1,17 +1,20 @@
-header
+header.p-half-v
   .wrapper
-    .logo
-      img(
-        alt="Showapp"
-        src="assets/img/logo.png"
-      )
-      h1.title
-        | Showapp
-    nav.menu
-      a.menu__active(href="#")
-        | Movies
-      a(href="#")
-        | Series
-      a(href="#")
-        | Favoritos
+    .grid.grid-negative
+      .grid__item.one-half
+        .logo
+          img.logo-img(
+            alt="Showapp"
+            src="assets/img/logo.png"
+          )
+          h1.logo-title
+            | Showapp
+      .grid__item.one-half
+        nav.menu
+          a.menu__item.menu__item-active(href="#")
+            | Movies
+          a.menu__item(href="#")
+            | Series
+          a.menu__item(href="#")
+            | Favoritos
 include partials/filter.pug

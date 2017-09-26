@@ -1,0 +1,24 @@
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  
+  &__item {
+    font-size: 16px;
+    font-weight: $weight--semibold;
+    color: $second--color;
+    margin-left: $margin;
+
+    &-active {
+      color: $first--color;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $first--color;
+        margin-top: $quarter--margin;
+      }
+    }
+  } 
+}

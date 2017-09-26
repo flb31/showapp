@@ -1,0 +1,18 @@
+.logo {
+  display: flex;
+  align-items: center;
+  width: 164px;
+
+  &-img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  &-title {
+    color: $first--color;
+    font-weight: $weight--normal;
+    margin: 0;
+    font-size: 1.5em;
+    margin-left: 10px;
+  }
+}
