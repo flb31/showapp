@@ -33,13 +33,15 @@ $desk--wide--start:   1824px!default;
 //Colors
 //--------
 $white : #FFF;
-$primary--color: gray;
-$secundary--color: red;
+$first--color: #00BDFF;
+$second--color: #E8EEF1;
+$third--color: #F3F6F7;
 
 //--------
 //Font weight
 //--------
 $weight--bold: 600;
+$weight--semibold: 500;
 $weight--normal: 400;
 $weight--lighter: 300;
 $weight--thin: 100;
@@ -47,9 +49,9 @@ $weight--thin: 100;
 //--------
 //Font family
 //--------
-$font--title: 'Helvetica';
-$font--subtitle: '';
-$font--paragraph: '';
+$font--title: 'Open Sans';
+$font--subtitle: 'Open Sans';
+$font--paragraph: 'Open Sans';
 
 //--------
 //Animation

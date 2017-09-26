@@ -1,0 +1,12 @@
+body {
+  
+  * {
+    font-family: $font--title;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+}
