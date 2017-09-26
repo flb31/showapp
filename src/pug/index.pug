@@ -6,8 +6,14 @@ html(
   head
     include tpl/head.pug
   body
-    .hello.phone-size-30.tablet-size-50.mid-size-80.lap-size-120
-      span.m-r
-        | flb31 FrontEnd
-      i.fa.fa-code
+    include tpl/header.pug
+    
+    section.shows.p-t
+      .wrapper
+        .grid
+          -var n = 0
+          while ++n <= 4
+            .grid__item.one-half
+              include tpl/partials/show.pug
+    
     include tpl/footer.pug
