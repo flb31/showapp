@@ -3,8 +3,22 @@ Web = {
   module: {} 
 };
 
-Web.module.helloworld = function(name) {
-  console.log('Hello World by ' + name);
+Web.module.modal = function(selector) {
+  var buttons = document.getElementsByClassName(selector);
+  Object.keys(buttons).map(function(key) {
+    
+    buttons[key].addEventListener('click', function(e) {
+      e.preventDefault();
+      var modalID = e.target.getAttribute('data-modal');
+      document.getElementById(modalID).className += ' modal__show';
+    });
+    
+    document.getElementById('modal-close').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('modal').classList.remove('modal__show');
+    });
+    
+  });
 };
 
-Web.module.helloworld('flb31');
+Web.module.modal('js-modal');
