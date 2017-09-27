@@ -67,8 +67,8 @@ $space--bar--menu--item: 20px;
       padding: 0;
       
       &-active:after {
-        width: calc(100% - #{$space--bar--menu--item * 4});
-        left: $space--bar--menu--item * 2;
+        width: 100%;
+        left: 0;
       }
     }
   }
