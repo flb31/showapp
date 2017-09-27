@@ -1,4 +1,4 @@
-header.header
+header.header(ng-controller="HeaderController as headerCtrl")
   .wrapper.p-half-v
     .grid.grid-negative
       .grid__item.one-half
@@ -8,7 +8,7 @@ header.header
             src="assets/img/logo.png"
           )
           h1.logo-title
-            = title
+            | {{ headerCtrl.title }}
       .grid__item.one-half
         .hamburger-button.mid--hidden.right.m-half-t#js-hamburger
           .hamburger-button__bar
@@ -22,5 +22,5 @@ header.header
             | Series
           a.menu__item.anm(href="#")
             | Favoritos
-  include partials/filter.pug
-include partials/list.pug
+  // include partials/filter.pug
+// include partials/list.pug
