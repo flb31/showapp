@@ -2,26 +2,33 @@ nav.list
   .wrapper
     h2.list-title.m-double-t.m-b
       | Descubra nuevas películas y programas de televisión
-    .grid.grid-negative
+    .grid.grid-negative.overflow-visible.clear
       .grid__item.one-whole.mid--two-twelfths
         h6.list-subtitle
           | Año
-        .input-form
-          select.input-form__select
-            option(selected)
+        .dropdown
+          .dropdown__header
+            | Filtrar por..
+            .dropdown__header-close
+          .dropdown__options
+            .dropdown__options-option
               | 2017
-            option
+            .dropdown__options-option
               | 2016
-            option
+            .dropdown__options-option
               | 2015
       .grid__item.one-whole.mid--four-twelfths.m-t.mid--m-t-none
         h6.list-subtitle
           | Genero
         .input-form
-          select.input-form__select
-            option
-              | Acción
-            option(selected)
-              | Drama
-            option
-              | Terror
+          .dropdown
+            .dropdown__header
+              | Filtrar por..
+              .dropdown__header-close
+            .dropdown__options
+              .dropdown__options-option
+                | Acción
+              .dropdown__options-option
+                | Drama
+              .dropdown__options-option
+                | Terror
