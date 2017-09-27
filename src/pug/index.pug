@@ -10,10 +10,10 @@ html(
     
     section.shows.p-t
       .wrapper
-        .grid.grid-negative.overflow-visible
+        .grid.grid-negative.overflow-visible.clear
           -var n = 0
           while ++n <= 4
-            .grid__item.one-half.m-b
+            .grid__item.one-whole.mid--one-half.m-b
               include tpl/partials/show.pug
     
     include tpl/partials/modal.pug

@@ -1,35 +1,38 @@
 article.show.clear
-  img.show__image(
-    alt="Show Image"
-    src="assets/img/show.png"
-  )
-  .show__desc
-    h3.show__desc__title(
-      title="DC's Legends of Tomorrow."
-    )
-      | DC's Legends of Tomorrow.
-    .show__desc__qualification
-      | 7.5
-      
-    .show__desc__info
-      .show__desc__info-data
-        | 2h 16min
-      .show__desc__info-data
-        | 5 May 2017 (USA)
-      .show__desc__info-data
-        | Acción y Aventura
-        
-    p.show__desc__paragraph
-      | Cuando los héroes por sí solos no son suficientes. El mundo necesita leyendas. Después de haber visto el futuro…
-    
-    .grid.grid-negative.show__desc__controls.overflow-visible
-      .grid__item.one-half
-        a.button.button-primary.show__desc__controls-trailer.anm.js-modal(
-          href="#"
-          data-modal="modal"
-        )
-          | Ver Trailer
-      .grid__item.one-half.anm.anm-pulse
-        a.show__desc__controls-like(href="#")
-          | Agregar a favoritos
-          i.fa.fa-heart.show__desc__controls-like-heart
+  .grid.grid-negative
+    .grid__item.two-sixths.show__image
+      img.show__image-img(
+        alt="Show Image"
+        src="assets/img/show.png"
+      )
+    .grid__item.four-sixths.show__desc
+      h3.show__desc__title(
+        title="DC's Legends of Tomorrow."
+      )
+        | DC's Legends of Tomorrow.
+      .show__desc__qualification
+        | 7.5
+
+      .show__desc__info
+        .show__desc__info-data
+          | 2h 16min
+        .show__desc__info-data
+          | 5 May 2017 (USA)
+        .show__desc__info-data
+          | Acción y Aventura
+
+      p.show__desc__paragraph
+        | Cuando los héroes por sí solos no son suficientes. El mundo necesita leyendas. Después de haber visto el futuro…
+
+      .grid.grid-negative.show__desc__controls.overflow-visible
+        .grid__item.one-half
+          a.button.button-primary.show__desc__controls-trailer.anm.js-modal(
+            href="#"
+            data-modal="modal"
+          )
+            | Ver Trailer
+        .grid__item.one-half.anm.anm-pulse
+          a.show__desc__controls-like(href="#")
+            .ellipsis-text
+              | Agregar a favoritos
+            i.fa.fa-heart.show__desc__controls-like-heart

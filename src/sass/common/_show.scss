@@ -1,19 +1,18 @@
-$with--image: 136px;
-
 .show {
   box-shadow: 0 1px 4px 0 rgba($second--color, .5);
   
   &__image {
-    width: $with--image;
-    float: left;
+    &-img {
+      width: 100%;
+      margin: auto 0;
+    }
   }
   
   &__desc {
-    width: calc(100% - #{$with--image});
-    display: inline-block;
-    float: left;
     padding: 15px;
     position: relative;
+    display: flex;
+    flex-direction: column;
     
     &__title,
     &__qualification {
