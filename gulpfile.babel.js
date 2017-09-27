@@ -59,7 +59,7 @@ gulp.task('sass', () => {
 
 gulp.task('pug', ['clean:pug'], () => {
   return gulp
-    .src(['src/app/**/*.pug'])
+    .src(['src/**/*.pug'])
     .pipe(pug({ pretty: isDev }) )
     .pipe(gulp.dest('public'))
     .pipe( gulpIf(isDev, connect.reload()) );
@@ -94,7 +94,7 @@ gulp.task('connect', () => {
 
 gulp.task('clean:pug', () => {
   return gulp
-    .src(['public/*.html','public/tpl'], {read: false})
+    .src(['public/*.html','public/app/**/*.html'], {read: false})
     .pipe(clean());
 });
 
