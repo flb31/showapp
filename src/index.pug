@@ -12,9 +12,7 @@ html(
     section.shows.p-t
       .wrapper
         .grid.grid-negative.overflow-visible.clear
-          -var n = 0
-          while ++n <= 4
             .grid__item.one-whole.mid--one-half.m-b
-              include app/pug/tpl/partials/show.pug
+              show-app-show-card
     include app/pug/tpl/partials/modal.pug
     include app/pug/tpl/footer.pug
