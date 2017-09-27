@@ -59,7 +59,7 @@
     @include ratio('&', '16:9');
     
     &__video {
-      height: 315px;
+      height: 100%;
     }
   }
   
