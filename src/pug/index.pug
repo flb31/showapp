@@ -10,10 +10,10 @@ html(
     
     section.shows.p-t
       .wrapper
-        .grid.grid-negative
+        .grid.grid-negative.overflow-visible
           -var n = 0
           while ++n <= 4
-            .grid__item.one-half
+            .grid__item.one-half.m-b
               include tpl/partials/show.pug
     
     include tpl/footer.pug

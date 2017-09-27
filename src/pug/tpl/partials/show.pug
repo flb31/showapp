@@ -1,13 +1,14 @@
-article.show
-  .show__image
-    img(
-      alt="Show Image"
-      src="assets/img/show.png"
-    )
+article.show.clear
+  img.show__image(
+    alt="Show Image"
+    src="assets/img/show.png"
+  )
   .show__desc
-    h3.show__desc__title
+    h3.show__desc__title(
+      title="DC's Legends of Tomorrow."
+    )
       | DC's Legends of Tomorrow.
-    .qualification
+    .show__desc__qualification
       | 7.5
       
     .show__desc__info
@@ -18,15 +19,14 @@ article.show
       .show__desc__info-data
         | Acción y Aventura
         
-    p.show__desc__info
+    p.show__desc__paragraph
       | Cuando los héroes por sí solos no son suficientes. El mundo necesita leyendas. Después de haber visto el futuro…
     
-    .show__desc__controls
-      .grid
-        .grid__item.one-half
-          a.button(href="#")
-            | Ver Trailer
-        .grid__item.one-half
-          a.icon-button(href="#")
-            | Agregar
-            i.fa.fa-heart
+    .grid.grid-negative.show__desc__controls
+      .grid__item.one-half
+        a.button.button-primary.show__desc__controls-trailer(href="#")
+          | Ver Trailer
+      .grid__item.one-half
+        a.show__desc__controls-like(href="#")
+          | Agregar a favoritos
+          i.fa.fa-heart.show__desc__controls-like-heart
