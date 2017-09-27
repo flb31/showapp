@@ -6,29 +6,8 @@ nav.list
       .grid__item.one-whole.mid--two-twelfths
         h6.list-subtitle
           | Año
-        .dropdown
-          .dropdown__header
-            | Filtrar por..
-            .dropdown__header-close
-          .dropdown__options
-            .dropdown__options-option
-              | 2017
-            .dropdown__options-option
-              | 2016
-            .dropdown__options-option
-              | 2015
+        show-app-dropdown(options="filterDropCtrl.optionYears")
       .grid__item.one-whole.mid--four-twelfths.m-t.mid--m-t-none
         h6.list-subtitle
           | Genero
-        .input-form
-          .dropdown
-            .dropdown__header
-              | Filtrar por..
-              .dropdown__header-close
-            .dropdown__options
-              .dropdown__options-option
-                | Acción
-              .dropdown__options-option
-                | Drama
-              .dropdown__options-option
-                | Terror
+        show-app-dropdown(options="filterDropCtrl.optionGenres")

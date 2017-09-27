@@ -1,0 +1,16 @@
+.dropdown(
+  ng-class="{ 'dropdown__open': dropdownCtrl.openDropdown }"
+  ng-click="dropdownCtrl.toggleDropdown()"
+)
+  .dropdown__header
+    | {{ dropdownCtrl.header }}
+    .dropdown__header-close(
+      ng-class="{ 'dropdown__header-close__show': dropdownCtrl.showCloseDropdown }"
+      ng-click="dropdownCtrl.defaultHeader(); $event.stopPropagation();"
+    )
+  .dropdown__options
+    .dropdown__options-option(
+      ng-repeat="option in dropdownCtrl.options"
+      ng-click="dropdownCtrl.selectItem(option)"
+    )
+      | {{ ::option.name }}
