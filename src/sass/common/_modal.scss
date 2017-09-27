@@ -5,13 +5,15 @@
   background-color: rgba($modal--background, .63);
   top: 0;
   left: 0;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  opacity: 0;
+  z-index: -1000;
   
   &__show {
-    display: flex;
+    opacity: 1;
+    z-index: 1000;
   }
   
   &-close {
@@ -22,6 +24,13 @@
     right: 0;
     top: -10%;
     cursor: pointer;
+    
+    &:hover {
+      &:before,
+      &:after {
+        background-color: $first--color;
+      }
+    }
     
     &:before,
     &:after {

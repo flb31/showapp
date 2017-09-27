@@ -1,1 +1,32 @@
-/* empty */
+.anm {
+  transition: ease all .4s;
+
+  &-pulse:hover {
+    animation: linear pulse 0.9s infinite;
+  }
+  
+  &-grow:hover {
+    animation: ease grow 0.3s forwards;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}

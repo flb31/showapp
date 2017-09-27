@@ -13,5 +13,10 @@
   &-primary {
     border-color: $first--color;
     color: $first--color;
+    
+    &:hover {
+      color: $white;
+      background-color: $first--color;
+    }
   }
 }

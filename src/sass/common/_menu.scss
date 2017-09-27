@@ -7,6 +7,10 @@
     font-weight: $weight--semibold;
     color: $gray--link;
     margin-left: $margin;
+    
+    &:hover {
+      color: $first--color;
+    }
 
     &-active {
       color: $first--color;
