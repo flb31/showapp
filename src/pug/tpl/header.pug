@@ -10,7 +10,12 @@ header.header
           h1.logo-title
             = title
       .grid__item.one-half
-        nav.menu
+        .hamburger-button.tablet--hidden.right.m-half-t#js-hamburger
+          .hamburger-button__bar
+          .hamburger-button__bar
+          .hamburger-button__bar
+          .hamburger-button__bar
+        nav.menu#js-menu
           a.menu__item.menu__item-active.anm(href="#")
             | Movies
           a.menu__item.anm(href="#")

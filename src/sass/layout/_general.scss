@@ -21,6 +21,13 @@ body {
     >.wrapper {
       max-width: $mid--start;
       margin: 0 auto;
+      padding-left: $half--padding;
+      padding-right: $half--padding;
+      
+      @media #{$gt--mid} {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
   
