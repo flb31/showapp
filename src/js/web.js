@@ -12,13 +12,16 @@ Web.module.modal = function(selector) {
       var modalID = e.target.getAttribute('data-modal');
       document.getElementById(modalID).className += ' modal__show';
     });
-    
-    document.getElementById('modal-close').addEventListener('click', function(e) {
+  });
+  
+  var buttons = document.getElementsByClassName('js-modal-close');
+  Object.keys(buttons).map(function(key) {
+    buttons[key].addEventListener('click', function(e) {
       e.preventDefault();
       document.getElementById('modal').classList.remove('modal__show');
     });
-    
   });
+  
 };
 
 Web.module.modal('js-modal');
