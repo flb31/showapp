@@ -51,7 +51,7 @@ $space--bar--menu--item: 20px;
     }
   }
   
-  @media #{$gt--small} {
+  @media #{$gt--mid} {
     position: static;
     display: flex;
     justify-content: flex-end;
@@ -65,13 +65,11 @@ $space--bar--menu--item: 20px;
       margin-left: $margin;
       margin-bottom: 0;
       padding: 0;
-    }
-  }
-  
-  @media #{$gt--mid} {
-    #{$root}__item-active:after {
-      width: calc(100% - #{$space--bar--menu--item * 4});
-      left: $space--bar--menu--item * 2;
+      
+      &-active:after {
+        width: calc(100% - #{$space--bar--menu--item * 4});
+        left: $space--bar--menu--item * 2;
+      }
     }
   }
 }

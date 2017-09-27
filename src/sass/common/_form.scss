@@ -32,10 +32,16 @@
   
   
   &__select {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: $weight--normal;
     color: $second--color;
     border-radius: 3px;
+    height: 40px;
+    width: 100%;
+    
+    @media #{$gt--mid} {
+      font-size: 12px;
+      height: 30px;
+    }
   }
-  
 }

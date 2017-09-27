@@ -43,7 +43,13 @@
   }
   
   &-subtitle {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0 0 $half--margin 0;
+    text-align: center;
+    
+    @media #{$gt--mid} {
+      font-size: 12px;
+      text-align: left;
+    }
   }
 }
