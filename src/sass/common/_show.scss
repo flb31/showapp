@@ -77,6 +77,10 @@ $with--image: 136px;
           padding-left: $quarter--padding;
           opacity: .54;
         }
+        
+        &--like-it {
+          color: $like--button;
+        }
       }
     }
   }
