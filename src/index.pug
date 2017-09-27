@@ -8,10 +8,7 @@ html(
   body
     show-app-header
     
-    section.shows.p-t
-      .wrapper
-        .grid.grid-negative.overflow-visible.clear
-            .grid__item.one-whole.mid--one-half.m-b
-              show-app-show-card
-    include app/pug/tpl/partials/modal.pug
+    ng-view
+    
+    // include app/pug/tpl/partials/modal.pug
     include app/pug/tpl/footer.pug
