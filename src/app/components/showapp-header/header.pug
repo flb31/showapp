@@ -10,17 +10,20 @@ header.header(ng-controller="HeaderController as headerCtrl")
           h1.logo-title
             | {{ headerCtrl.title }}
       .grid__item.one-half
-        .hamburger-button.mid--hidden.right.m-half-t#js-hamburger
+        .hamburger-button.mid--hidden.right.m-half-t(
+          ng-click="headerCtrl.toggleMenu()"
+          ng-class="{ 'hamburger-button__open' : headerCtrl.isOpen }"
+        )
           .hamburger-button__bar
           .hamburger-button__bar
           .hamburger-button__bar
           .hamburger-button__bar
-        nav.menu
+        nav.menu(ng-class="{ 'menu__open' : headerCtrl.isOpen }")
           a.menu__item.anm(
             ng-repeat="item in headerCtrl.menu"
             href="#{{ item.url }}"
             class="{{ item.class }}"
-            ng-click="headerCtrl.activeMenuItem($index)"
+            ng-click="headerCtrl.activeMenuItem($index); headerCtrl.closeMenu();"
           )
             | {{ item.name }}
           

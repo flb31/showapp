@@ -7,6 +7,7 @@ angular.module('showApp').controller('HeaderController', [
       { name: 'Series', url:'/series', class: '' },
       { name: 'Favoritos', url:'/favorites', class: '' }
     ];
+    self.isOpen = false;
     const menuActive = 'menu__item-active';
 
     const verifyMenuByUrl = () => {
@@ -25,6 +26,14 @@ angular.module('showApp').controller('HeaderController', [
       self.menu[index].class = menuActive;
     };
     
+    self.toggleMenu = () => {
+      self.isOpen = !self.isOpen;
+    };
+
+    self.closeMenu = () => {
+      self.isOpen = false;
+    };
+
     verifyMenuByUrl();
   }]
 );
