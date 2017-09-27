@@ -21,3 +21,21 @@
   background-color: $third--color;
   padding: $half--padding 0;
 }
+
+.list {
+  
+  &-title,
+  &-subtitle {
+    font-weight: $weight--semibold;
+    color: $second--color;
+  }
+  
+  &-title {
+    font-size: 16px;
+  }
+  
+  &-subtitle {
+    font-size: 12px;
+    margin: 0 0 $half--margin 0;
+  }
+}
