@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "components-font-awesome": "^4.5.0"
+    "components-font-awesome": "^4.5.0",
+    "angular": "1.6.6"
   }
 }

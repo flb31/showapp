@@ -21,6 +21,7 @@ if (env === 'dev') {
 
 const gulp = require('gulp');
 const clean = require('gulp-clean');
+var concat = require('gulp-concat');
 const gulpIf = require('gulp-if');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
@@ -32,16 +33,18 @@ gulp.task('js', () => {
 
   if(isDev){
     return gulp
-      .src('src/js/**/*.js')
+      .src('src/app/**/*.js')
+      .pipe(concat('app.min.js'))
       .pipe(jshint())
       .pipe(jshint.reporter('default'))
-      .pipe(gulp.dest('public/assets/js'))
+      .pipe(gulp.dest('public/js'))
       .pipe(connect.reload());
   }else{
     return gulp
-      .src('src/js/**/*.js')
+      .src('src/app/**/*.js')
+      .pipe(concat('app.min.js'))
       .pipe(uglyfile())
-      .pipe(gulp.dest('public/assets/js'));
+      .pipe(gulp.dest('public/js'));
   }
 });
 
@@ -56,7 +59,7 @@ gulp.task('sass', () => {
 
 gulp.task('pug', ['clean:pug'], () => {
   return gulp
-    .src(['src/pug/**/*.pug'])
+    .src(['src/app/**/*.pug'])
     .pipe(pug({ pretty: isDev }) )
     .pipe(gulp.dest('public'))
     .pipe( gulpIf(isDev, connect.reload()) );
@@ -65,9 +68,9 @@ gulp.task('pug', ['clean:pug'], () => {
 
 gulp.task('watch', () => {
 
-  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/app/**/*.js', ['js']);
   gulp.watch('src/sass/**/*.scss', ['sass']);
-  gulp.watch(['src/pug/**/*.pug'], ['pug']);
+  gulp.watch(['src/app/**/*.pug'], ['pug']);
   
   //vendors
   gulp.watch(['src/vendors/**/*'], ['vendors']);

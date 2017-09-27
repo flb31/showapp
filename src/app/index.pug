@@ -1,12 +1,13 @@
-include tpl/data.pug
+include pug/tpl/data.pug
 doctype html
 html(
   lang="es"
+  ng-app="showApp"
 )
   head
-    include tpl/head.pug
+    include pug/tpl/head.pug
   body
-    include tpl/header.pug
+    include pug/tpl/header.pug
     
     section.shows.p-t
       .wrapper
@@ -14,7 +15,6 @@ html(
           -var n = 0
           while ++n <= 4
             .grid__item.one-whole.mid--one-half.m-b
-              include tpl/partials/show.pug
-    
-    include tpl/partials/modal.pug
-    include tpl/footer.pug
+              include pug/tpl/partials/show.pug
+    include pug/tpl/partials/modal.pug
+    include pug/tpl/footer.pug
