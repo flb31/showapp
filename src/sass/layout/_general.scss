@@ -19,7 +19,7 @@ body {
   nav,
   section {
     >.wrapper {
-      max-width: $wrapper;
+      max-width: $mid--start;
       margin: 0 auto;
     }
   }
