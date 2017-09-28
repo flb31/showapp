@@ -16,7 +16,7 @@ angular.module('showApp').controller('ModalController', [
     });
     
     const loadVideo = () => {
-      const promise = AjaxService.send(Methods.get, `movie/${$scope.show.id}/videos?a=1`);
+      const promise = AjaxService.send(Methods.get, `movie/${$scope.show.id}/videos`);
       promise.then( 
         (success) => {
           const results = success.data.results;
