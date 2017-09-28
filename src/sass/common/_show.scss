@@ -1,11 +1,14 @@
 $padding--card: 15px;
 .show {
   box-shadow: 0 1px 4px 0 rgba($second--color, .5);
+  height: 220px;
   
   &__image {
     &-img {
-      width: 100%;
       margin: auto 0;
+      @media #{$gt--mid} {
+        width: 147px;
+      }
     }
   }
   
