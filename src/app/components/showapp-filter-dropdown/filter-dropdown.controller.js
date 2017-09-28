@@ -1,5 +1,5 @@
 angular.module('showApp').controller('FilterDropdownController', [
-  'Title', function (Title) {
+  function () {
     const self = this;
     self.optionYears = [
       { name: '2017' },

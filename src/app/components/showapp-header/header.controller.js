@@ -1,7 +1,7 @@
 angular.module('showApp').controller('HeaderController', [
-  'Title', '$location', function (Title, $location) {
+  'Config', '$location', function (Config, $location) {
     const self = this;
-    self.title = Title;
+    self.title = Config.title;
     self.menu = [
       { name: 'Movies', url:'/movies', class: '' },
       { name: 'Series', url:'/series', class: '' },

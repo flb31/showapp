@@ -5,5 +5,8 @@ nav.filter
       input.input-form__text(
         type="text"
         id="search"
+        ng-model="filterCtrl.search"
+        ng-keyup="filterCtrl.searchShows()"
         placeholder="Search fora movie, series and videos"
+        autocomplete="off"
       )

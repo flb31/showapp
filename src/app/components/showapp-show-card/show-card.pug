@@ -2,27 +2,28 @@ article.show.clear
   .grid.grid-negative
     .grid__item.two-sixths.show__image
       img.show__image-img(
-        alt="Show Image"
-        src="assets/img/show.png"
+        alt="{{ showCardCtrl.setTitle(showCardCtrl.show) }}"
+        src="{{ showCardCtrl.setImage(showCardCtrl.show.poster_path) }}"
       )
     .grid__item.four-sixths.show__desc
       h3.show__desc__title(
-        title="DC's Legends of Tomorrow."
+        title="{{ showCardCtrl.setTitle(showCardCtrl.show) }}"
       )
-        | DC's Legends of Tomorrow.
+        | {{ showCardCtrl.setTitle(showCardCtrl.show) }}
       .show__desc__qualification
-        | 7.5
+        | {{ ::showCardCtrl.show.vote_average }}
 
       .show__desc__info
         .show__desc__info-data
           | 2h 16min
         .show__desc__info-data
-          | 5 May 2017 (USA)
+          | {{ ::showCardCtrl.show.release_date | date : format : timezone }}
+          | (USA)
         .show__desc__info-data
           | Acción y Aventura
 
       p.show__desc__paragraph
-        | Cuando los héroes por sí solos no son suficientes. El mundo necesita leyendas. Después de haber visto el futuro…
+        | {{ ::showCardCtrl.show.overview | limitTo : showCardCtrl.limit }}
 
       .grid.grid-negative.show__desc__controls.overflow-visible
         .grid__item.one-half

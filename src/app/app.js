@@ -7,10 +7,12 @@ angular.module('showApp', dependencies)
     $locationProvider.hashPrefix('');
     $routeProvider
       .when('/', {
-        templateUrl: '../app/layouts/movie/movie.html'
+        templateUrl: '../app/layouts/movie/movie.html',
+        controller: 'MovieController as movieCtrl'
       })
       .when('/movies', {
-        templateUrl: '../app/layouts/movie/movie.html'
+        templateUrl: '../app/layouts/movie/movie.html',
+        controller: 'MovieController as movieCtrl'
       })
       .when('/series', {
         templateUrl: '../app/layouts/serie/serie.html'
