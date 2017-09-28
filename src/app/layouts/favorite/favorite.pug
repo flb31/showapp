@@ -1,5 +1,7 @@
 section.shows.p-t
   .wrapper
     .grid.grid-negative.overflow-visible.clear
-      .grid__item.one-whole.mid--one-half.m-b(ng-repeat="item in favoriteCtrl.getShows()")
+      .grid__item.one-whole.mid--one-half.m-b(
+        ng-repeat="item in favoriteCtrl.getShows() | filter: favoriteCtrl.getFilter()"
+      )
         show-app-show-card(item="item")

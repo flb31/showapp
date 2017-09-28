@@ -31,4 +31,12 @@ angular.module('showApp')
       add: add,
       remove: remove
     };
+  }])
+  .service('FilterService', ['FilterValue', function (FilterValue) {
+    return {
+      get: () => FilterValue,
+      set: (newsFilter) => {
+        FilterValue = newsFilter;
+      }
+    };
   }]);

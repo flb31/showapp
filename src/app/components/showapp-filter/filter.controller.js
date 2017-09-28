@@ -1,23 +1,22 @@
 angular.module('showApp').controller('FilterController', [
-  'AjaxService', 'Methods', 'ShowsService', '$location', 'Menu',
-  function (AjaxService, Methods, ShowsService, $location, Menu) {
+  'AjaxService', 'Methods', 'ShowsService', '$location', 'Menu', 'FilterService',
+  function (AjaxService, Methods, ShowsService, $location, Menu, FilterService) {
     const self = this;
-    
+
     self.searchShows = () => {
-      
+
       let item = getItemMenu();
-      
+
       if(useApi(item)) {
         const promise = AjaxService.send(Methods.get, `${item.uri}?query=${self.search}`);
         promise.then( (success) => {
           ShowsService.set(success.data);
-          console.log(success.data);
         });
       } else {
-        console.log('usa otro metodo');
+        FilterService.set(self.search);
       }
     };
-    
+
     const useApi = (obj) => obj.use_api;
     
     const getItemMenu = () => {

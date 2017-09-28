@@ -1,3 +1,4 @@
 angular.module('showApp')
   .value('ShowValue', [])
-  .value('FavoritesValue', []);
+  .value('FavoritesValue', [])
+  .value('FilterValue', '');
