@@ -1,0 +1,13 @@
+.paginator
+  button.paginator__back(
+    ng-class="{ 'paginator__back-disabled': paginatorCtrl.currentPage == 0 }"
+    ng-disabled="paginatorCtrl.currentPage == 0"
+    ng-click="paginatorCtrl.currentPage = paginatorCtrl.currentPage - 1"
+  )
+    i.fa.fa-angle-left.fa-2x
+  .paginator__current
+    | {{ paginatorCtrl.currentPage + 1 }}
+  button.paginator__next(
+    ng-click="paginatorCtrl.currentPage = paginatorCtrl.currentPage + 1"
+  )
+    i.fa.fa-angle-right.fa-2x

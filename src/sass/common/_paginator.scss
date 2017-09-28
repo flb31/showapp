@@ -1,0 +1,26 @@
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $third--color;
+  padding: $quarter--padding 0;
+  
+  &__next,
+  &__back {
+    color: $first--color;
+    margin: 0 $margin;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    
+    &-disabled {
+      cursor: not-allowed;
+      color: $gray--disabled;
+    }
+  }
+  
+  &__current {
+    font-size: 16px;
+    color: $second--color;
+  }
+}
