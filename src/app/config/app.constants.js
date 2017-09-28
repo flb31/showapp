@@ -3,6 +3,11 @@ angular.module('showApp')
     title: 'Showapp',
     limit_text: 100
   })
+  .constant('Menu',[
+    { name: 'Movies', url:'/movies', uri: 'search/movie', use_api: true, class: '' },
+    { name: 'Series', url:'/series', uri: 'search/tv', use_api: true, class: '' },
+    { name: 'Favoritos', url:'/favorites', type: '', use_api: false, class: '' }
+  ])
   .constant('Api', {
     url: 'https://api.themoviedb.org/3/',
     key: 'e6a9963c18666ffdfa26467964e0fede',

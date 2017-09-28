@@ -1,12 +1,8 @@
 angular.module('showApp').controller('HeaderController', [
-  'Config', '$location', function (Config, $location) {
+  'Config', '$location', 'Menu', function (Config, $location, Menu) {
     const self = this;
     self.title = Config.title;
-    self.menu = [
-      { name: 'Movies', url:'/movies', class: '' },
-      { name: 'Series', url:'/series', class: '' },
-      { name: 'Favoritos', url:'/favorites', class: '' }
-    ];
+    self.menu = Menu;
     self.isOpen = false;
     const menuActive = 'menu__item-active';
 
