@@ -28,8 +28,8 @@ article.show.clear
       .grid.grid-negative.show__desc__controls.overflow-visible
         .grid__item.one-half
           a.button.button-primary.show__desc__controls-trailer.anm.js-modal(
-            href="#"
             data-modal="modal"
+            ng-click="showCardCtrl.openModal()"
           )
             | Ver Trailer
         .grid__item.one-half
@@ -40,3 +40,7 @@ article.show.clear
             .ellipsis-text
               | Agregar a favoritos
             i.fa.fa-heart.show__desc__controls-like-heart
+show-app-modal(
+  show="showCardCtrl.show"
+  open-modal="showCardCtrl.modal"
+)

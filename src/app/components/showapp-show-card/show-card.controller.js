@@ -4,6 +4,7 @@ angular.module('showApp').controller('ShowCardController', [
     const self = this;
     self.show = $scope.item;
     self.limit = Config.limit_text;
+    self.modal = false;
 
     const url_image = Api.url_image;
     const url_image_default = Api.url_image_default;
@@ -33,6 +34,10 @@ angular.module('showApp').controller('ShowCardController', [
       } else {
         FavoriteService.remove(item);
       }
+    };
+    
+    self.openModal = () => {
+      self.modal = true;
     };
   }]
 );

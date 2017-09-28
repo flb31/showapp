@@ -1,9 +1,10 @@
-.modal.anm.js-modal-close#modal
+.modal.anm(
+  ng-class="{ 'modal__show': openModal }"
+  ng-click="modalCtrl.closeModal()"
+)
   .modal__wrapper
-    i.modal-close.anm.anm-grow.js-modal-close(title="Cerrar")
-    .modal-trailer
-      iframe.modal-trailer__video(
-        src="https://www.youtube.com/embed/s7L2PVdrb_8"
-        frameborder="0"
-        allowfullscreen
-      )
+    i.modal-close.anm.anm-grow(
+      title="Cerrar"
+      ng-click="modalCtrl.closeModal()"
+    )
+    .modal-trailer(ng-bind-html="modalCtrl.reproductor | to_trusted")
