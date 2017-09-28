@@ -5,3 +5,5 @@ section.shows.p-t
         ng-repeat="item in favoriteCtrl.getShows() | filter: favoriteCtrl.getFilter()"
       )
         show-app-show-card(item="item")
+    .message(ng-if="favoriteCtrl.getShows().length == 0")
+      | Lo sentimos, no se encontraron favoritos relacionadas con estos criterios
