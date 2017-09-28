@@ -1,6 +1,6 @@
 angular.module('showApp').controller('ShowCardController', [
-  '$scope', 'Config', 'Api', 'AjaxService', 'Methods', 'FavoriteService',
-  function ($scope, Config, Api, AjaxService, Methods, FavoriteService) {
+  '$scope', 'Config', 'Api', 'AjaxService', 'Methods', 'FavoriteService', 'GenreService',
+  function ($scope, Config, Api, AjaxService, Methods, FavoriteService, GenreService) {
     const self = this;
     self.show = $scope.item;
     self.limit = Config.limit_text;
@@ -38,6 +38,21 @@ angular.module('showApp').controller('ShowCardController', [
     
     self.openModal = () => {
       self.modal = true;
+    };
+    
+    self.getGenre = (genresID) => {
+      const allGenres = GenreService.get();
+      let genresStr = '';
+      
+      genresID.forEach( (id) => {
+        allGenres.forEach( (obj1) => {
+          if(id == obj1.id) {
+            genresStr += `${obj1.name}, `;
+          }
+        });
+      });
+
+      return genresStr.substring(0, genresStr.length - 2);
     };
   }]
 );

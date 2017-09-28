@@ -18,9 +18,11 @@ article.show.clear
           | 2h 16min
         .show__desc__info-data
           | {{ ::showCardCtrl.show.release_date | date : format : timezone }}
-          | (USA)
-        .show__desc__info-data
-          | Acción y Aventura
+          | ({{ ::showCardCtrl.show.original_language }})
+        .show__desc__info-data.ellipsis-text(
+          title="{{ ::showCardCtrl.getGenre(showCardCtrl.show.genre_ids) }}"
+        )
+          | {{ ::showCardCtrl.getGenre(showCardCtrl.show.genre_ids) }}
 
       p.show__desc__paragraph
         | {{ ::showCardCtrl.show.overview | limitTo : showCardCtrl.limit }}

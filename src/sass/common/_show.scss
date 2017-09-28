@@ -43,11 +43,16 @@ $padding--card: 15px;
     
     &__info {
       padding: $half--padding 0;
+      display: flex;
       
       &-data {
         font-size: 11px;
         color: $gray--dark;
         display: inline;
+        
+        &:last-child {
+          width: 90px;
+        }
         
         &:after {
           content: '|';

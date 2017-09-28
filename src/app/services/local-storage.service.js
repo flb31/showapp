@@ -101,4 +101,14 @@ angular.module('showApp')
         return AttributesValue;
       }
     }
+  }])
+  .service('GenreService', ['GenresValue', function(GenresValue) {
+    return {
+      set: (newGenres) => {
+        GenresValue = newGenres;
+      },
+      get: () => {
+        return GenresValue;
+      }
+    }
   }]);

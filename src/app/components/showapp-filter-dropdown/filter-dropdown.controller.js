@@ -1,5 +1,6 @@
 angular.module('showApp').controller('FilterDropdownController', [
-  'AjaxService', 'Methods', 'Config', 'Api', function (AjaxService, Methods, Config, Api) {
+  'AjaxService', 'Methods', 'Config', 'Api', 'GenreService',
+  function (AjaxService, Methods, Config, Api, GenreService) {
     const self = this;
     self.optionGenres = [];
     self.optionYears = [];
@@ -12,6 +13,7 @@ angular.module('showApp').controller('FilterDropdownController', [
       const promise = AjaxService.send(Methods.get, `genre/movie/list`);
       promise.then( (response) => {
         self.optionGenres = response.data.genres;
+        GenreService.set(self.optionGenres);
       });
       
       self.optionYears = loadYears();
