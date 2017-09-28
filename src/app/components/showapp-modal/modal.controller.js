@@ -7,7 +7,7 @@ angular.module('showApp').controller('ModalController', [
       $scope.openModal = false;
     };
 
-    $scope.$watch('openModal', function(newVal, oldVal) {
+    $scope.$watch('openModal', (newVal, oldVal) => {
       if(newVal) {
         loadVideo();
       }
@@ -17,7 +17,7 @@ angular.module('showApp').controller('ModalController', [
       const promise = AjaxService.send(Methods.get, `movie/${$scope.show.id}/videos?a=1`);
       promise.then( (success) => {
         const results = success.data.results;
-        if(results && results.length > 0) {
+        if (results && results.length > 0) {
           const key = results[0].key;
           self.reproductor = `<iframe class="modal-trailer__video" src="https://www.youtube.com/embed/${key}" frameborder="0" allowfullscreen</iframe>`;
         } else {
