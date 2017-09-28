@@ -1,11 +1,13 @@
 angular.module('showApp').controller('FilterController', [
-  'AjaxService', 'Methods', 'ShowsService', '$location', 'Menu', 'FilterService',
-  function (AjaxService, Methods, ShowsService, $location, Menu, FilterService) {
+  'AjaxService', 'Methods', 'ShowsService', '$location', 'Menu', 'UrlService',
+  function (AjaxService, Methods, ShowsService, $location, Menu, UrlService) {
     const self = this;
 
     self.searchShows = () => {
 
       let item = getItemMenu();
+      
+      UrlService.set('search', self.search);
 
       if(useApi(item)) {
         const search = (self.search != null ) ? self.search : item.searchDefault;
@@ -15,8 +17,6 @@ angular.module('showApp').controller('FilterController', [
         promise.then( (success) => {
           ShowsService.set(success.data);
         });
-      } else {
-        FilterService.set(self.search);
       }
     };
 

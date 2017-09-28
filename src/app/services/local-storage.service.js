@@ -32,11 +32,11 @@ angular.module('showApp')
       remove: remove
     };
   }])
-  .service('FilterService', ['FilterValue', function (FilterValue) {
+  .service('UrlService', ['$location', function ($location) {
     return {
-      get: () => FilterValue,
-      set: (newsFilter) => {
-        FilterValue = newsFilter;
+      get: (key) => $location.search(),
+      set: (key, val) => {
+        $location.search(key, val);
       }
     };
   }]);

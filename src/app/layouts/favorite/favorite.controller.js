@@ -1,7 +1,7 @@
 angular.module('showApp').controller('FavoriteController', [
-  'FavoritesValue', 'FilterService', function (FavoritesValue, FilterService) {
+  'FavoritesValue', 'UrlService', function (FavoritesValue, UrlService) {
     const self = this;
     self.getShows = () => FavoritesValue;
-    self.getFilter = () => FilterService.get();
+    self.getFilter = () => UrlService.get('search').search;
   }]
 );
