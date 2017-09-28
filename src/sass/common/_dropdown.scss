@@ -57,6 +57,8 @@ $height--dropdown--item: 30px;
     width: 100%;
     box-shadow: 0 2px 4px rgba($gray--border, .5);
     z-index: 10;
+    max-height: 146px;
+    overflow-y: auto;
     
     &-option {
       background-color: $white;
