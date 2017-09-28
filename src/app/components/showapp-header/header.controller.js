@@ -1,10 +1,11 @@
 angular.module('showApp').controller('HeaderController', [
-  'Config', '$location', 'Menu', function (Config, $location, Menu) {
+  'Config', '$location', 'Menu', 'ShowsService', function (Config, $location, Menu, ShowsService) {
     const self = this;
     self.title = Config.title;
     self.menu = Menu;
     self.isOpen = false;
     const menuActive = 'menu__item-active';
+    let currentItem = -1;
 
     const verifyMenuByUrl = () => {
       const url = $location.url();
@@ -19,7 +20,14 @@ angular.module('showApp').controller('HeaderController', [
       self.menu.forEach( (el) => {
         el.class = '';
       });
+      currentItem = index;
       self.menu[index].class = menuActive;
+    };
+    
+    self.changeMenu = (index) => {
+      if(currentItem != index) {
+        ShowsService.set([]);
+      }
     };
     
     self.toggleMenu = () => {
