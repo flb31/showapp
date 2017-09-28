@@ -4,9 +4,9 @@ angular.module('showApp')
     limit_text: 100
   })
   .constant('Menu',[
-    { name: 'Movies', url:'/movies', uri: 'search/movie', use_api: true, class: '' },
-    { name: 'Series', url:'/series', uri: 'search/tv', use_api: true, class: '' },
-    { name: 'Favoritos', url:'/favorites', type: '', use_api: false, class: '' }
+    { name: 'Movies', url:'/movies', uri: 'search/movie', use_api: true, class: '', searchDefault: 'Pulp Fiction' },
+    { name: 'Series', url:'/series', uri: 'search/tv', use_api: true, class: '', searchDefault: 'Breaking Bad' },
+    { name: 'Favoritos', url:'/favorites', type: '', use_api: false, class: '', searchDefault: '' }
   ])
   .constant('Api', {
     url: 'https://api.themoviedb.org/3/',

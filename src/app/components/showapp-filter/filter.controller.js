@@ -8,6 +8,9 @@ angular.module('showApp').controller('FilterController', [
       let item = getItemMenu();
 
       if(useApi(item)) {
+        const search = (self.search != null ) ? self.search : item.searchDefault;
+        self.search = search;
+        
         const promise = AjaxService.send(Methods.get, `${item.uri}?query=${self.search}`);
         promise.then( (success) => {
           ShowsService.set(success.data);
@@ -28,4 +31,6 @@ angular.module('showApp').controller('FilterController', [
       });
       return item;
     };
+    
+    self.searchShows();
   }]);
