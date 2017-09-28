@@ -8,7 +8,7 @@ angular.module('showApp')
   .constant('Menu',[
     { name: 'Movies', url:'/movies', uris: {search: 'movie', list: 'discover/movie'}, use_api: true, class: '', searchDefault: 'Pulp Fiction' },
     { name: 'Series', url:'/series', uris: {search: 'tv', list: 'discover/tv'}, use_api: true, class: '', searchDefault: 'Breaking Bad' },
-    { name: 'Favoritos', url:'/favorites', type: '', use_api: false, class: '', searchDefault: '' }
+    { name: 'Favoritos', url:'/favorites', uris: {search: '', list: ''}, use_api: false, class: '', searchDefault: '' }
   ])
   .constant('Api', {
     url: 'https://api.themoviedb.org/3/',

@@ -21,9 +21,9 @@ header.header
         nav.menu(ng-class="{ 'menu__open' : headerCtrl.isOpen }")
           a.menu__item.anm(
             ng-repeat="item in headerCtrl.menu"
-            href="#{{ item.url }}"
+            href="#{{ item.url }}{{ headerCtrl.getAttributes() }}"
             class="{{ item.class }}"
-            ng-click="headerCtrl.changeMenu($index); headerCtrl.activeMenuItem($index); headerCtrl.closeMenu();"
+            ng-click="headerCtrl.activeMenuItem($index); headerCtrl.closeMenu();"
           )
             | {{ item.name }}
           

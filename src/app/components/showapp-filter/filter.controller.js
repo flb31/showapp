@@ -1,14 +1,14 @@
 angular.module('showApp').controller('FilterController', [
-  'ShowAjaxService', 'ItemMenuService', 'UrlService', 'Api',
-  function (ShowAjaxService, ItemMenuService, UrlService, Api) {
+  'ShowAjaxService', 'ItemMenuService', 'UrlService', 'Api', '$scope', 'AttributesService',
+  function (ShowAjaxService, ItemMenuService, UrlService, Api, $scope, AttributesService) {
     const self = this;
 
     self.searchShows = () => {
       const data = UrlService.get();
+      AttributesService.set(UrlService.query( [Api.params.year, Api.params.genre, Api.params.search], true ));
       
       if(Object.keys(data).length) {
         const search = getSearch();
-        self.search = search;
 
         if(search) {
           searchByQuery();
@@ -20,8 +20,11 @@ angular.module('showApp').controller('FilterController', [
       }
     };
     
-    const searchByQuery = () => {
+    self.changeText = () => {
       UrlService.set(Api.params.search, getSearch());
+    };
+    
+    const searchByQuery = () => {
       const vars = UrlService.get();
       
       const itemMenu = ItemMenuService.get();
@@ -40,6 +43,10 @@ angular.module('showApp').controller('FilterController', [
     };
     
     const getSearch = () => (self.search != null ) ? self.search : UrlService.get()[Api.params.search];
+    
+    $scope.$on('$routeChangeStart', function(next, current) {
+       self.searchShows();
+    });
     
     // First ajax
     self.searchShows();

@@ -6,7 +6,7 @@ nav.filter
         type="text"
         id="search"
         ng-model="filterCtrl.search"
-        ng-keyup="filterCtrl.searchShows()"
+        ng-keyup="filterCtrl.changeText(); filterCtrl.searchShows()"
         placeholder="Search fora movie, series and videos"
         autocomplete="off"
       )

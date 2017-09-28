@@ -91,4 +91,14 @@ angular.module('showApp')
         }
       }
     };
+  }])
+  .service('AttributesService', ['AttributesValue', function(AttributesValue) {
+    return {
+      set: (newAttr) => {
+        AttributesValue = newAttr;
+      },
+      get: () => {
+        return AttributesValue;
+      }
+    }
   }]);
