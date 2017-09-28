@@ -1,16 +1,31 @@
 angular.module('showApp').controller('FilterDropdownController', [
-  function () {
+  'AjaxService', 'Methods', 'Config', function (AjaxService, Methods, Config) {
     const self = this;
-    self.optionYears = [
-      { name: '2017' },
-      { name: '2016' },
-      { name: '2015' }
-    ];
+    self.optionGenres = [];
+    self.optionYears = [];
+    self.year = 'primary_release_year';
+    self.genre = 'with_genres';
+    self.queryBy = [self.genre, self.year];
+    const currentYear = new Date().getFullYear();
     
-    self.optionGenres = [
-      { name: 'Drama' },
-      { name: 'Terror' },
-      { name: 'Acción' }
-    ];
+    const loadData = () => {
+      const promise = AjaxService.send(Methods.get, `genre/movie/list`);
+      promise.then( (response) => {
+        self.optionGenres = response.data.genres;
+      });
+      
+      self.optionYears = loadYears();
+    };
+    
+    const loadYears = () => {
+      const since = Config.since;
+      let years = [];
+      for (var i = currentYear; i >= since; i --) {
+        years.push( { name: i, id: i });
+      }
+      return years;
+    }
+    
+    loadData();
   }]
 );

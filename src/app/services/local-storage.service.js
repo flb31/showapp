@@ -33,10 +33,64 @@ angular.module('showApp')
     };
   }])
   .service('UrlService', ['$location', function ($location) {
+    const get = () => $location.search();
+    
+    const set = (key, val) => {
+      $location.search(key, val);
+    };
+    
+    const validateAttr = (attr) => (attr);
+    
+    const query = (keys, removeStart) => {
+      let queryStr = '';
+      keys.forEach( (key) => {
+        let val = get()[key];
+        if(validateAttr(val)) {
+          queryStr += `&${key}=${val}`;
+        }
+      });
+      
+      if(removeStart) {
+        queryStr = queryStr.substr(1);
+      }
+      
+      return queryStr;
+    };
+    
     return {
-      get: (key) => $location.search(),
-      set: (key, val) => {
-        $location.search(key, val);
+      get: get,
+      set: set,
+      query: query
+    };
+  }])
+  .service('ItemMenuService', ['$location', 'Menu', function ($location, Menu) {
+    return {
+      get: () => {
+        let item = {};
+        Menu.forEach( (obj) => {
+          if(obj.url == $location.path()) {
+            item = obj;
+          }
+        });
+        return item;
+      }
+    };
+  }])
+  .service('ShowAjaxService', ['ShowsService', 'UrlService', 'Methods', 'AjaxService', 'ItemMenuService',
+  function (ShowsService, UrlService, Methods, AjaxService, ItemMenuService) {
+    
+    // const getSearch = (item) => (self.search != null ) ? self.search : item.searchDefault;
+    
+    return {
+      execute: (uri, use_api) => {
+        if(use_api) {
+          const promise = AjaxService.send(Methods.get, uri);
+          promise.then( (success) => {
+            ShowsService.set(success.data);
+          });
+        } else {
+          ShowsService.set([]);
+        }
       }
     };
   }]);

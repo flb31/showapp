@@ -6,8 +6,16 @@ nav.list
       .grid__item.one-whole.mid--two-twelfths
         h6.list-subtitle
           | Año
-        show-app-dropdown(options="filterDropCtrl.optionYears")
+        show-app-dropdown(
+          options="filterDropCtrl.optionYears"
+          type-drop="filterDropCtrl.year"
+          query-by="filterDropCtrl.queryBy"
+        )
       .grid__item.one-whole.mid--four-twelfths.m-t.mid--m-t-none
         h6.list-subtitle
           | Genero
-        show-app-dropdown(options="filterDropCtrl.optionGenres")
+        show-app-dropdown(
+          options="filterDropCtrl.optionGenres"
+          type-drop="filterDropCtrl.genre"
+          query-by="filterDropCtrl.queryBy"
+        )

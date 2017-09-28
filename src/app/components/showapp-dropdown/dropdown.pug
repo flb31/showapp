@@ -10,7 +10,7 @@
     )
   .dropdown__options
     .dropdown__options-option(
-      ng-repeat="option in dropdownCtrl.options"
+      ng-repeat="option in options"
       ng-click="dropdownCtrl.selectItem(option)"
     )
       | {{ ::option.name }}

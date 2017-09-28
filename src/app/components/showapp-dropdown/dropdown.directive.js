@@ -3,7 +3,9 @@ angular.module('showApp')
     return {
       restrict: 'E',
       scope: {
-        options: '='
+        options: '=',
+        typeDrop: '=',
+        queryBy: '='
       },
       templateUrl: '../app/components/showapp-dropdown/dropdown.html',
       controller: 'DropdownController as dropdownCtrl'

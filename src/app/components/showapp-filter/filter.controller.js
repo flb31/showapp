@@ -1,36 +1,16 @@
 angular.module('showApp').controller('FilterController', [
-  'AjaxService', 'Methods', 'ShowsService', '$location', 'Menu', 'UrlService',
-  function (AjaxService, Methods, ShowsService, $location, Menu, UrlService) {
+  'ShowAjaxService', 'ItemMenuService', 'UrlService', function (ShowAjaxService, ItemMenuService, UrlService) {
     const self = this;
 
     self.searchShows = () => {
-
-      let item = getItemMenu();
+      UrlService.set('query', self.search);
       
-      UrlService.set('search', self.search);
-
-      if(useApi(item)) {
-        const search = (self.search != null ) ? self.search : item.searchDefault;
-        self.search = search;
-        
-        const promise = AjaxService.send(Methods.get, `${item.uri}?query=${self.search}`);
-        promise.then( (success) => {
-          ShowsService.set(success.data);
-        });
-      }
-    };
-
-    const useApi = (obj) => obj.use_api;
-    
-    const getItemMenu = () => {
-      let item = {};
-      Menu.forEach( (obj) => {
-        if(obj.url == $location.path()) {
-          item = obj;
-        }
-      });
-      return item;
+      const item = ItemMenuService.get();
+      const query = UrlService.query(['query'], true);
+      const uri = `search/${item.uris.search}?${query}`;
+      
+      ShowAjaxService.execute(uri, item.use_api);
     };
     
-    self.searchShows();
+    ShowAjaxService.execute();
   }]);

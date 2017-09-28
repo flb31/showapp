@@ -1,11 +1,13 @@
 angular.module('showApp')
   .constant('Config', {
     title: 'Showapp',
-    limit_text: 100
+    limit_text: 100,
+    language: 'es',
+    since: 1900
   })
   .constant('Menu',[
-    { name: 'Movies', url:'/movies', uri: 'search/movie', use_api: true, class: '', searchDefault: 'Pulp Fiction' },
-    { name: 'Series', url:'/series', uri: 'search/tv', use_api: true, class: '', searchDefault: 'Breaking Bad' },
+    { name: 'Movies', url:'/movies', uris: {search: 'movie', list: 'discover/movie'}, use_api: true, class: '', searchDefault: 'Pulp Fiction' },
+    { name: 'Series', url:'/series', uris: {search: 'tv', list: 'discover/tv'}, use_api: true, class: '', searchDefault: 'Breaking Bad' },
     { name: 'Favoritos', url:'/favorites', type: '', use_api: false, class: '', searchDefault: '' }
   ])
   .constant('Api', {
