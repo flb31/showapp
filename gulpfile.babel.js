@@ -43,7 +43,7 @@ gulp.task('js', () => {
     return gulp
       .src('src/app/**/*.js')
       .pipe(concat('app.min.js'))
-      .pipe(uglyfile())
+      //.pipe(uglyfile())
       .pipe(gulp.dest('public/js'));
   }
 });
