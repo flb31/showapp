@@ -3,3 +3,5 @@ section.shows.p-t
     .grid.grid-negative.overflow-visible.clear
       .grid__item.one-whole.mid--one-half.m-b(ng-repeat="item in serieCtrl.getShows()")
         show-app-show-card(item="item")
+    .message(ng-if="serieCtrl.getShows().length == 0")
+      | Lo sentimos, no se encontraron películas relacionadas con estos criterios

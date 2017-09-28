@@ -1,0 +1,10 @@
+.message {
+  color: $second--color;
+  font-size: 24px;
+  padding: $padding 0;
+  text-align: center;
+  
+  @media #{$gt--mid} {
+    text-align: left;
+  }
+}
