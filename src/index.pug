@@ -4,11 +4,11 @@ html(
   ng-app="showApp"
 )
   head
-    include app/pug/tpl/head.pug
+    include app/layouts/head/head.pug
   body
     show-app-header
     ng-view
     show-app-paginator
     
     // include app/pug/tpl/partials/modal.pug
-    include app/pug/tpl/footer.pug
+    include app/layouts/footer/footer.pug
