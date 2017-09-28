@@ -79,8 +79,6 @@ angular.module('showApp')
   .service('ShowAjaxService', ['ShowsService', 'UrlService', 'Methods', 'AjaxService', 'ItemMenuService',
   function (ShowsService, UrlService, Methods, AjaxService, ItemMenuService) {
     
-    // const getSearch = (item) => (self.search != null ) ? self.search : item.searchDefault;
-    
     return {
       execute: (uri, use_api) => {
         if(use_api) {

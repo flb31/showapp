@@ -17,10 +17,13 @@ angular.module('showApp').controller('DropdownController', [
       executeAjax();
     };
     
-    self.defaultHeader = () => {
+    const resetDropdown = () => {
       self.header = 'Filtrar por..';
       self.showCloseDropdown = false;
-      
+    };
+    
+    self.defaultHeader = () => {
+      resetDropdown();
       UrlService.set($scope.typeDrop, null);
       executeAjax();
     };
@@ -32,5 +35,5 @@ angular.module('showApp').controller('DropdownController', [
       ShowAjaxService.execute(uri, itemMenu.use_api);
     };
 
-    self.defaultHeader();
+    resetDropdown();
   }]);

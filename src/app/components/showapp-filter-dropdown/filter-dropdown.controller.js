@@ -1,10 +1,10 @@
 angular.module('showApp').controller('FilterDropdownController', [
-  'AjaxService', 'Methods', 'Config', function (AjaxService, Methods, Config) {
+  'AjaxService', 'Methods', 'Config', 'Api', function (AjaxService, Methods, Config, Api) {
     const self = this;
     self.optionGenres = [];
     self.optionYears = [];
-    self.year = 'primary_release_year';
-    self.genre = 'with_genres';
+    self.year = Api.params.year;
+    self.genre = Api.params.genre;
     self.queryBy = [self.genre, self.year];
     const currentYear = new Date().getFullYear();
     
