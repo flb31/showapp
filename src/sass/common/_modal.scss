@@ -16,6 +16,13 @@
     z-index: 1000;
   }
   
+  &__loading,
+  &__message {
+    text-align: center;
+    position: relative;
+    top: $triple--padding;
+  }
+  
   &-close {
     position: absolute;
     width: 24px;

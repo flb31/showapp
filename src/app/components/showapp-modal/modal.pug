@@ -1,4 +1,4 @@
-.modal.anm(
+.modal(
   ng-class="{ 'modal__show': openModal }"
   ng-click="modalCtrl.closeModal()"
 )
@@ -7,4 +7,8 @@
       title="Cerrar"
       ng-click="modalCtrl.closeModal()"
     )
+    .modal__loading(ng-if="modalCtrl.loading")
+      i.fa.fa-circle-o-notch.fa-2x.fa-spin.color-white
+    .modal__message.color-white(ng-if="modalCtrl.message")
+      | {{ modalCtrl.message }}
     .modal-trailer(ng-bind-html="modalCtrl.reproductor | to_trusted")
