@@ -15,7 +15,8 @@ angular.module('showApp', dependencies)
         controller: 'SerieController as serieCtrl'
       })
       .when('/favorites', {
-        templateUrl: '../app/layouts/favorite/favorite.html'
+        templateUrl: '../app/layouts/favorite/favorite.html',
+        controller: 'FavoriteController as favoriteCtrl'
       })
       .otherwise({
         redirectTo: '/movies'

@@ -32,8 +32,11 @@ article.show.clear
             data-modal="modal"
           )
             | Ver Trailer
-        .grid__item.one-half.anm.anm-pulse
-          a.show__desc__controls-like(href="#")
+        .grid__item.one-half
+          a.show__desc__controls-like(
+            ng-click="showCardCtrl.addFavorite(showCardCtrl.show)"
+            ng-class="{ false: 'show__desc__controls-like--like-it', true: 'anm anm-pulse' }[!showCardCtrl.addedFav(showCardCtrl.show)]"
+          )
             .ellipsis-text
               | Agregar a favoritos
             i.fa.fa-heart.show__desc__controls-like-heart
