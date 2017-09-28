@@ -1,3 +1,4 @@
+$padding--card: 15px;
 .show {
   box-shadow: 0 1px 4px 0 rgba($second--color, .5);
   
@@ -9,7 +10,7 @@
   }
   
   &__desc {
-    padding: 15px;
+    padding: $padding--card;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -28,8 +29,8 @@
     
     &__qualification {
       position: absolute;
-      right: $padding;
-      top: $padding;
+      right: $padding--card;
+      top: $padding--card;
     }
     
     &__info {
