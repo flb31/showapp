@@ -1,7 +1,8 @@
 angular.module('showApp').controller('FilterController', [
-  'ShowAjaxService', 'ItemMenuService', 'UrlService', 'Api', '$scope', 'AttributesService',
-  function (ShowAjaxService, ItemMenuService, UrlService, Api, $scope, AttributesService) {
+  'ShowAjaxService', 'ItemMenuService', 'UrlService', 'Api', '$scope', 'AttributesService', '$timeout',
+  function (ShowAjaxService, ItemMenuService, UrlService, Api, $scope, AttributesService, $timeout) {
     const self = this;
+    self.timeOut = null;
 
     self.searchShows = () => {
       const data = UrlService.get();
@@ -21,7 +22,10 @@ angular.module('showApp').controller('FilterController', [
     };
     
     self.changeText = () => {
-      UrlService.set(Api.params.search, getSearch());
+      $timeout.cancel(self.timeOut);
+      self.timeOut = $timeout(() => {
+        UrlService.set(Api.params.search, getSearch());
+      }, 500);
     };
     
     const searchByQuery = () => {
