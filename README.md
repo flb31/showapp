@@ -1,12 +1,12 @@
-#flb31 FrontEnd
+# flb31 FrontEnd
 
-###Prerequisites:
+### Prerequisites:
   - npm: http://nodejs.org/
   - Bower: http://bower.io/
   - Gulp: http://gulpjs.com/
 
 
-###Structure:
+### Structure:
 - src/
   - assets/
     - img/
@@ -29,19 +29,19 @@
 - README.md
 - server.js
 
-###Getting Started
+### Getting Started
 > 
   `npm install`: Install packages.  
   `gulp run --env=dev`: Compile and Run Server.  
   `gulp build --env=dev`: Export project to **public/** without minify css and js.
 
 
-###Production Enviroment
+### Production Enviroment
 > 
   `gulp build`: Export project.  
   `node server.js`: Run server  
 
-###Heroku CLI
+### Heroku CLI
 Install Heroku CLI: https://devcenter.heroku.com/articles/heroku-command
 
 > 
@@ -50,7 +50,7 @@ Install Heroku CLI: https://devcenter.heroku.com/articles/heroku-command
   `git push heroku master`  
   `heroku open`  
 
-###Contact
+### Contact
 Info: https://github.com/flb31/  
-Email: fabian@lumendigital.co
+Email: flb031@gmail.com
   
